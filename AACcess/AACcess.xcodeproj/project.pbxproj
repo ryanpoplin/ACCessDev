@@ -14,6 +14,8 @@
 		5A0FC9081A7712EC009AC750 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0FC9071A7712EC009AC750 /* Images.xcassets */; };
 		5A0FC90B1A7712EC009AC750 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A0FC9091A7712EC009AC750 /* LaunchScreen.xib */; };
 		5A0FC9171A7712EC009AC750 /* AACcessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0FC9161A7712EC009AC750 /* AACcessTests.swift */; };
+		5A96CE6A1A775136008188A8 /* PopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A96CE691A775136008188A8 /* PopView.xib */; };
+		5A96CE6C1A775153008188A8 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A96CE6B1A775153008188A8 /* PopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		5A0FC9101A7712EC009AC750 /* AACcessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AACcessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0FC9151A7712EC009AC750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A0FC9161A7712EC009AC750 /* AACcessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AACcessTests.swift; sourceTree = "<group>"; };
+		5A96CE691A775136008188A8 /* PopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopView.xib; sourceTree = "<group>"; };
+		5A96CE6B1A775153008188A8 /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			children = (
 				5A0FC8FD1A7712EC009AC750 /* AppDelegate.swift */,
 				5A0FC9021A7712EC009AC750 /* ViewController.swift */,
+				5A96CE6B1A775153008188A8 /* PopViewController.swift */,
+				5A96CE691A775136008188A8 /* PopView.xib */,
 				5A0FC9041A7712EC009AC750 /* Main.storyboard */,
 				5A0FC9071A7712EC009AC750 /* Images.xcassets */,
 				5A0FC9091A7712EC009AC750 /* LaunchScreen.xib */,
@@ -197,6 +203,7 @@
 			files = (
 				5A0FC9061A7712EC009AC750 /* Main.storyboard in Resources */,
 				5A0FC90B1A7712EC009AC750 /* LaunchScreen.xib in Resources */,
+				5A96CE6A1A775136008188A8 /* PopView.xib in Resources */,
 				5A0FC9081A7712EC009AC750 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A96CE6C1A775153008188A8 /* PopViewController.swift in Sources */,
 				5A0FC9031A7712EC009AC750 /* ViewController.swift in Sources */,
 				5A0FC8FE1A7712EC009AC750 /* AppDelegate.swift in Sources */,
 				5A0FC9011A7712EC009AC750 /* AACcess.xcdatamodeld in Sources */,
@@ -411,6 +419,7 @@
 				5A0FC91C1A7712EC009AC750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A0FC91D1A7712EC009AC750 /* Build configuration list for PBXNativeTarget "AACcessTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +428,7 @@
 				5A0FC91F1A7712EC009AC750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

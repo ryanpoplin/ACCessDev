@@ -20,6 +20,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 
+    @IBOutlet weak var shortcutButton: UIBarButtonItem!
+    
+    @IBAction func showPopView(sender: UIBarButtonItem) {
+        
+        let popView = PopViewController(nibName: "PopView", bundle: nil)
+        
+        let popController = UIPopoverController(contentViewController: popView)
+        
+        popController.popoverContentSize = CGSize(width: 550, height: 500)
+        
+        popController.presentPopoverFromBarButtonItem(shortcutButton, permittedArrowDirections: UIPopoverArrowDirection.Down, animated: true)
+        
+    }
 }
-
