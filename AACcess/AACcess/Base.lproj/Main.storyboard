@@ -19,14 +19,36 @@
                                 <action selector="showPopView:" destination="BYZ-38-t0r" id="H8s-Up-NBf"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Data" id="SvT-UI-I05">
+                            <connections>
+                                <action selector="dataAction:" destination="BYZ-38-t0r" id="eWY-Mh-uU8"/>
+                                <segue destination="jpK-7t-Uhv" kind="push" id="8ev-yp-mhO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="shortcutButton" destination="loQ-XX-sF3" id="jre-av-UOM"/>
+                        <outlet property="dataButton" destination="SvT-UI-I05" id="d1O-Vu-R64"/>
+                        <outlet property="shortcutButton" destination="loQ-XX-sF3" id="Rgz-7b-4RL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-482.56" y="624.63999999999999"/>
+        </scene>
+        <!--Data View Controller-->
+        <scene sceneID="jPI-S6-d6j">
+            <objects>
+                <viewController id="jpK-7t-Uhv" customClass="DataViewController" customModule="AACcess" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OQR-HJ-QYD">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ILp-cW-kk4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cyB-2l-s62" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="439" y="624"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mvy-up-uYL">
@@ -42,7 +64,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubr-sY-en6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1379.8399999999999" y="624.63999999999999"/>
+            <point key="canvasLocation" x="-1412" y="624"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -16,6 +16,7 @@
 		5A0FC9171A7712EC009AC750 /* AACcessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0FC9161A7712EC009AC750 /* AACcessTests.swift */; };
 		5A96CE6A1A775136008188A8 /* PopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A96CE691A775136008188A8 /* PopView.xib */; };
 		5A96CE6C1A775153008188A8 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A96CE6B1A775153008188A8 /* PopViewController.swift */; };
+		5A96CE6E1A776084008188A8 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A96CE6D1A776084008188A8 /* DataViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		5A0FC9161A7712EC009AC750 /* AACcessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AACcessTests.swift; sourceTree = "<group>"; };
 		5A96CE691A775136008188A8 /* PopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopView.xib; sourceTree = "<group>"; };
 		5A96CE6B1A775153008188A8 /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
+		5A96CE6D1A776084008188A8 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				5A0FC8FD1A7712EC009AC750 /* AppDelegate.swift */,
 				5A0FC9021A7712EC009AC750 /* ViewController.swift */,
 				5A96CE6B1A775153008188A8 /* PopViewController.swift */,
+				5A96CE6D1A776084008188A8 /* DataViewController.swift */,
 				5A96CE691A775136008188A8 /* PopView.xib */,
 				5A0FC9041A7712EC009AC750 /* Main.storyboard */,
 				5A0FC9071A7712EC009AC750 /* Images.xcassets */,
@@ -224,6 +227,7 @@
 			files = (
 				5A96CE6C1A775153008188A8 /* PopViewController.swift in Sources */,
 				5A0FC9031A7712EC009AC750 /* ViewController.swift in Sources */,
+				5A96CE6E1A776084008188A8 /* DataViewController.swift in Sources */,
 				5A0FC8FE1A7712EC009AC750 /* AppDelegate.swift in Sources */,
 				5A0FC9011A7712EC009AC750 /* AACcess.xcdatamodeld in Sources */,
 			);

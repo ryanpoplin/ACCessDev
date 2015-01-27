@@ -10,6 +10,6 @@ import UIKit
 
 class PopViewController: UIViewController {
     
-    
+    // add the tableview and core data shit...
     
 }
