@@ -22,7 +22,7 @@
 // ADD WEBVIEW, AND MAKE IT LINK THE THE EXCEPAPPSDATA SITE AND FIXED KEEN.IO SHIT, AND A NICE NAVABLE...
 // BACKBONE.JS APP: UTLIZE THE TGGLYNLANDING PAGE MADE LAST MONTH...
 // ADD PARSE FOR LOG IN/OUT AND CONFIGURE CONNECTIONS BETWEEEN THE PRIVACY AGREEMENT ON THE IOS APP...
-// AND THE WEB APP...
+// AND THE WEB APP...AND PAYMENTS...
 
 // GET EVERTHING SMOOTH AND SIMPLE...
 // MAKE SURE EVERYTHING WORKS WELL, AND IS SUPER USEFUL...
@@ -30,14 +30,21 @@
 // SUBMIT TO STORE...
 
 import UIKit
+import AVFoundation
+import QuartzCore
+import JavaScriptCore
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerDelegate {
     
     @IBOutlet weak var dataButton: UIBarButtonItem!
     @IBOutlet weak var shortcutButton: UIBarButtonItem!
+    @IBOutlet weak var textArea: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textArea?.becomeFirstResponder()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -56,14 +63,17 @@ class ViewController: UIViewController {
         
         let popController = UIPopoverController(contentViewController: popView)
         
-        popController.popoverContentSize = CGSize(width: 550, height: 500)
+        popController.popoverContentSize = CGSize(width: 450, height: 220)
         
-        popController.presentPopoverFromBarButtonItem(shortcutButton, permittedArrowDirections: UIPopoverArrowDirection.Down, animated: true)
+        popController.presentPopoverFromBarButtonItem(shortcutButton, permittedArrowDirections: UIPopoverArrowDirection.Up, animated: true)
+        
+        // popView.
         
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        // temp maybe...
         popView.dismissViewControllerAnimated(true, completion: nil)
         
         // Get the new view controller using segue.destinationViewController.

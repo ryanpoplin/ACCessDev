@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="e5U-oB-tJj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e5U-oB-tJj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AACcess" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dp3-ag-gcs"/>
+                        <viewControllerLayoutGuide type="bottom" id="gXc-Eu-bkk"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kvz-In-8jZ">
+                                <rect key="frame" x="75" y="200" width="450" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kvz-In-8jZ" firstAttribute="top" secondItem="dp3-ag-gcs" secondAttribute="bottom" constant="136" id="Jvf-Sa-BF3"/>
+                            <constraint firstItem="Kvz-In-8jZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="czv-an-c54"/>
+                            <constraint firstItem="Kvz-In-8jZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="55" id="gcf-BL-MAl"/>
+                            <constraint firstItem="gXc-Eu-bkk" firstAttribute="top" secondItem="Kvz-In-8jZ" secondAttribute="bottom" constant="355" id="ylX-o5-dcG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TUK-tp-xqS">
                         <barButtonItem key="leftBarButtonItem" title="Shortcuts" id="loQ-XX-sF3">
@@ -22,25 +41,30 @@
                         <barButtonItem key="rightBarButtonItem" title="Data" id="SvT-UI-I05">
                             <connections>
                                 <action selector="dataAction:" destination="BYZ-38-t0r" id="eWY-Mh-uU8"/>
-                                <segue destination="jpK-7t-Uhv" kind="push" id="8ev-yp-mhO"/>
+                                <segue destination="jpK-7t-Uhv" kind="show" id="8ev-yp-mhO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dataButton" destination="SvT-UI-I05" id="d1O-Vu-R64"/>
                         <outlet property="shortcutButton" destination="loQ-XX-sF3" id="Rgz-7b-4RL"/>
+                        <outlet property="textArea" destination="Kvz-In-8jZ" id="bvv-yU-02v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-482.56" y="624.63999999999999"/>
+            <point key="canvasLocation" x="-378" y="365"/>
         </scene>
         <!--Data View Controller-->
         <scene sceneID="jPI-S6-d6j">
             <objects>
                 <viewController id="jpK-7t-Uhv" customClass="DataViewController" customModule="AACcess" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gc0-VN-kHY"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Rr-dD-Opb"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OQR-HJ-QYD">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -48,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyB-2l-s62" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439" y="624"/>
+            <point key="canvasLocation" x="342.96875" y="365.625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mvy-up-uYL">
@@ -64,12 +88,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubr-sY-en6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1412" y="624"/>
+            <point key="canvasLocation" x="-1103.125" y="365.625"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
 </document>

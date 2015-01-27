@@ -10,6 +10,6 @@ import UIKit
 
 class PopViewController: UIViewController {
     
-    // add the tableview and core data shit...
+    // how to add a table view and table view controller setup to a popover like this...
     
 }

@@ -17,6 +17,7 @@
 		5A96CE6A1A775136008188A8 /* PopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A96CE691A775136008188A8 /* PopView.xib */; };
 		5A96CE6C1A775153008188A8 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A96CE6B1A775153008188A8 /* PopViewController.swift */; };
 		5A96CE6E1A776084008188A8 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A96CE6D1A776084008188A8 /* DataViewController.swift */; };
+		5A9DFD911A77AAA700002F5A /* text-analyzer.js in Resources */ = {isa = PBXBuildFile; fileRef = 5A9DFD901A77AAA700002F5A /* text-analyzer.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		5A96CE691A775136008188A8 /* PopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopView.xib; sourceTree = "<group>"; };
 		5A96CE6B1A775153008188A8 /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 		5A96CE6D1A776084008188A8 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		5A9DFD901A77AAA700002F5A /* text-analyzer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "text-analyzer.js"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				5A0FC8FC1A7712EC009AC750 /* Info.plist */,
+				5A9DFD901A77AAA700002F5A /* text-analyzer.js */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				5A0FC90B1A7712EC009AC750 /* LaunchScreen.xib in Resources */,
 				5A96CE6A1A775136008188A8 /* PopView.xib in Resources */,
 				5A0FC9081A7712EC009AC750 /* Images.xcassets in Resources */,
+				5A9DFD911A77AAA700002F5A /* text-analyzer.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
