@@ -12,24 +12,15 @@ class DataViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-    
-//    @IBAction func exitData(sender: UIBarButtonItem) {
-//
-//        
-//        
-//    }
 
     /*
     // MARK: - Navigation

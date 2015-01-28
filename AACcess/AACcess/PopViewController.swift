@@ -9,9 +9,11 @@
 import UIKit
 import CoreData
 
+// figure it out with coredata for shortcuts...
+
 class PopViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
 
-    var tableView: UITableView?
+    let tableView: UITableView?
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return 25
