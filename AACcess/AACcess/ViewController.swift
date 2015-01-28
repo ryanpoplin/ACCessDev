@@ -32,10 +32,10 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     @IBOutlet weak var speakOrPauseButton: UIButton!
     @IBOutlet weak var saveShortcutButton: UIButton!
     
-    
     // internal class variables...
     internal var textViewness: String = ""
     internal var speechPaused: Bool = false
+    internal var synthesizer: AVSpeechSynthesizer!
     
     // ...
     override func viewDidLoad() {
@@ -48,11 +48,21 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
         // ...
         textArea.delegate = self
         
+        // AVFoundation...
+        self.synthesizer = AVSpeechSynthesizer()
+        self.synthesizer.delegate = self
+        speechPaused = false
+        
         // fix the cursor issue...
         self.automaticallyAdjustsScrollViewInsets = false
         
         // focus on the textView object...
         textArea?.becomeFirstResponder()
+        
+        // make those buttons look good...
+        clearTextViewButton.layer.cornerRadius = 5
+        speakOrPauseButton.layer.cornerRadius = 5
+        saveShortcutButton.layer.cornerRadius = 5
         
         if textArea.text == "" {
             
@@ -113,9 +123,58 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     
         textArea?.text = nil
         
+        self.synthesizer.stopSpeakingAtBoundary(.Immediate)
+        
         speakOrPauseButton.enabled = false
         saveShortcutButton.enabled = false
     
+    }
+    
+    @IBAction func speakOrPausePressed(sender: AnyObject) {
+    
+        var textString:NSString = textArea.text
+        var charSet:NSCharacterSet = NSCharacterSet.whitespaceAndNewlineCharacterSet()
+        var trimmedString:NSString = textString.stringByTrimmingCharactersInSet(charSet)
+        
+        if trimmedString.length == 0 {
+            
+        } else {
+            
+            if speechPaused == false {
+                
+                speakOrPauseButton.setTitle("Pause", forState: .Normal)
+                self.synthesizer.continueSpeaking()
+                speechPaused = true
+                
+            } else {
+                
+                speakOrPauseButton.setTitle("Speak", forState: .Normal)
+                speechPaused = false
+                self.synthesizer.pauseSpeakingAtBoundary(.Immediate)
+                
+            }
+            
+            if self.synthesizer.speaking == false {
+                
+                var text:String = textArea!.text
+                var utterance:AVSpeechUtterance = AVSpeechUtterance(string:text)
+                utterance.rate = 0.02
+                self.synthesizer.speakUtterance(utterance)
+                
+            }
+            
+        }
+    
+    }
+    
+    func speechSynthesizer(synthesizer: AVSpeechSynthesizer!, didFinishSpeechUtterance utterance: AVSpeechUtterance!) {
+        
+        speakOrPauseButton.setTitle("Speak", forState: .Normal)
+        speechPaused = false
+        var sentenceText: String = textArea.text
+        
+        // analyzeText(sentenceText)
+        
     }
     
     // prepare for a segue...
