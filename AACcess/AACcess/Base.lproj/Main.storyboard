@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e5U-oB-tJj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="e5U-oB-tJj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,22 +13,69 @@
                         <viewControllerLayoutGuide type="bottom" id="m3x-Au-bf7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kvz-In-8jZ">
-                                <rect key="frame" x="50" y="82" width="500" height="45"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g63-zi-98R">
+                                <rect key="frame" x="16" y="84" width="736" height="220"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="G73-pQ-2k9"/>
+                                    <constraint firstAttribute="width" constant="736" id="uqI-6o-7tX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31a-Up-Ps8">
+                                <rect key="frame" x="334" y="323" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.84447592439999997" green="0.84216646299999998" blue="0.86111582880000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Uis-Nx-rZ1"/>
+                                    <constraint firstAttribute="height" constant="50" id="nrs-JL-Reb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearTextViewContent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aa1-e0-6ba"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6d0-w9-jQS">
+                                <rect key="frame" x="442" y="323" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.84447592439999997" green="0.84216646299999998" blue="0.86111582880000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="GJj-Kr-DYW"/>
+                                    <constraint firstAttribute="height" constant="50" id="OVr-mX-D9F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Speak">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jn9-V5-uw7">
+                                <rect key="frame" x="226" y="323" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.84447592439999997" green="0.84216646299999998" blue="0.86111582880000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9hQ-4T-8qo"/>
+                                    <constraint firstAttribute="width" constant="100" id="W2e-vQ-FeN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Kvz-In-8jZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="8bV-fB-R0e"/>
-                            <constraint firstItem="Kvz-In-8jZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RK5-Qx-WOh"/>
-                            <constraint firstItem="m3x-Au-bf7" firstAttribute="top" secondItem="Kvz-In-8jZ" secondAttribute="bottom" constant="473" id="lie-6J-M5g"/>
-                            <constraint firstItem="Kvz-In-8jZ" firstAttribute="top" secondItem="fTF-bF-9JA" secondAttribute="bottom" constant="18" id="nZW-zI-i2U"/>
+                            <constraint firstItem="Jn9-V5-uw7" firstAttribute="top" secondItem="g63-zi-98R" secondAttribute="bottom" constant="19" id="5jv-av-oid"/>
+                            <constraint firstItem="31a-Up-Ps8" firstAttribute="top" secondItem="g63-zi-98R" secondAttribute="bottom" constant="19" id="Wya-Np-zSZ"/>
+                            <constraint firstItem="6d0-w9-jQS" firstAttribute="top" secondItem="g63-zi-98R" secondAttribute="bottom" constant="19" id="Y0n-aC-nVY"/>
+                            <constraint firstAttribute="centerX" secondItem="31a-Up-Ps8" secondAttribute="centerX" id="bls-fJ-K6M"/>
+                            <constraint firstAttribute="centerX" secondItem="Jn9-V5-uw7" secondAttribute="centerX" constant="108" id="hAN-h8-yRw"/>
+                            <constraint firstAttribute="centerX" secondItem="6d0-w9-jQS" secondAttribute="centerX" constant="-108" id="hSP-i2-F9c"/>
+                            <constraint firstItem="g63-zi-98R" firstAttribute="top" secondItem="fTF-bF-9JA" secondAttribute="bottom" constant="20" id="nVH-5w-F40"/>
+                            <constraint firstAttribute="centerX" secondItem="g63-zi-98R" secondAttribute="centerX" id="qA0-vO-4yK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TUK-tp-xqS">
@@ -41,19 +87,22 @@
                         <barButtonItem key="rightBarButtonItem" title="Data" id="SvT-UI-I05">
                             <connections>
                                 <action selector="dataAction:" destination="BYZ-38-t0r" id="eWY-Mh-uU8"/>
-                                <segue destination="jpK-7t-Uhv" kind="show" id="8ev-yp-mhO"/>
+                                <segue destination="jpK-7t-Uhv" kind="push" id="8ev-yp-mhO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="clearTextViewButton" destination="31a-Up-Ps8" id="c6X-F7-psO"/>
                         <outlet property="dataButton" destination="SvT-UI-I05" id="d1O-Vu-R64"/>
+                        <outlet property="saveShortcutButton" destination="Jn9-V5-uw7" id="tmd-vk-wPV"/>
                         <outlet property="shortcutButton" destination="loQ-XX-sF3" id="Rgz-7b-4RL"/>
-                        <outlet property="textArea" destination="Kvz-In-8jZ" id="cBz-cH-Cp1"/>
+                        <outlet property="speakOrPauseButton" destination="6d0-w9-jQS" id="fvf-se-bqi"/>
+                        <outlet property="textArea" destination="g63-zi-98R" id="oBn-Mi-UhZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-380" y="407"/>
+            <point key="canvasLocation" x="-482" y="774"/>
         </scene>
         <!--Data View Controller-->
         <scene sceneID="jPI-S6-d6j">
@@ -64,7 +113,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fws-1s-6HY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OQR-HJ-QYD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -72,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyB-2l-s62" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342.96875" y="365.625"/>
+            <point key="canvasLocation" x="439" y="624"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mvy-up-uYL">
@@ -88,7 +137,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubr-sY-en6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1103.125" y="365.625"/>
+            <point key="canvasLocation" x="-1412" y="624"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
 </document>
