@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e5U-oB-tJj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,18 +20,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kvz-In-8jZ">
-                                <rect key="frame" x="75" y="200" width="450" height="45"/>
+                                <rect key="frame" x="75" y="72" width="450" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gK-A1-3vu">
+                                <rect key="frame" x="172" y="133" width="80" height="49"/>
+                                <color key="backgroundColor" red="0.84447592439999997" green="0.84216646299999998" blue="0.86111582880000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="FYq-GC-dYo"/>
+                                    <constraint firstAttribute="width" constant="80" id="Kiq-0k-g1v"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPi-C7-aSd">
+                                <rect key="frame" x="260" y="133" width="80" height="50"/>
+                                <color key="backgroundColor" red="0.84447592439999997" green="0.84216646299999998" blue="0.86111582880000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="gCD-vx-utY"/>
+                                </constraints>
+                                <state key="normal" title="Clear">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhR-S1-M0I">
+                                <rect key="frame" x="348" y="133" width="80" height="50"/>
+                                <color key="backgroundColor" red="0.84447592439999997" green="0.84216646299999998" blue="0.86111582880000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="uxS-E3-qJq"/>
+                                </constraints>
+                                <state key="normal" title="Speak">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Kvz-In-8jZ" firstAttribute="top" secondItem="dp3-ag-gcs" secondAttribute="bottom" constant="136" id="Jvf-Sa-BF3"/>
-                            <constraint firstItem="Kvz-In-8jZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="czv-an-c54"/>
-                            <constraint firstItem="Kvz-In-8jZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="55" id="gcf-BL-MAl"/>
-                            <constraint firstItem="gXc-Eu-bkk" firstAttribute="top" secondItem="Kvz-In-8jZ" secondAttribute="bottom" constant="355" id="ylX-o5-dcG"/>
+                            <constraint firstItem="DhR-S1-M0I" firstAttribute="top" secondItem="XPi-C7-aSd" secondAttribute="top" id="4Df-bQ-tNM"/>
+                            <constraint firstItem="Kvz-In-8jZ" firstAttribute="top" secondItem="dp3-ag-gcs" secondAttribute="bottom" constant="8" symbolic="YES" id="5uf-Ys-Xmk"/>
+                            <constraint firstItem="XPi-C7-aSd" firstAttribute="baseline" secondItem="DhR-S1-M0I" secondAttribute="firstBaseline" id="6AI-lV-hpH"/>
+                            <constraint firstItem="2gK-A1-3vu" firstAttribute="baseline" secondItem="XPi-C7-aSd" secondAttribute="firstBaseline" id="AFE-PM-zv8"/>
+                            <constraint firstItem="XPi-C7-aSd" firstAttribute="leading" secondItem="2gK-A1-3vu" secondAttribute="trailing" constant="8" symbolic="YES" id="B33-lO-fbv"/>
+                            <constraint firstItem="2gK-A1-3vu" firstAttribute="top" secondItem="XPi-C7-aSd" secondAttribute="top" id="SvF-DK-gaG"/>
+                            <constraint firstItem="Kvz-In-8jZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="55" id="ZdN-NX-uL8"/>
+                            <constraint firstItem="DhR-S1-M0I" firstAttribute="leading" secondItem="XPi-C7-aSd" secondAttribute="trailing" constant="8" symbolic="YES" id="c7B-ju-S4Z"/>
+                            <constraint firstItem="2gK-A1-3vu" firstAttribute="top" secondItem="Kvz-In-8jZ" secondAttribute="bottom" constant="8" symbolic="YES" id="dI1-ww-jKl"/>
+                            <constraint firstItem="Kvz-In-8jZ" firstAttribute="centerX" secondItem="XPi-C7-aSd" secondAttribute="centerX" id="gKM-pU-pR8"/>
+                            <constraint firstItem="Kvz-In-8jZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hb4-bH-GkP"/>
+                            <constraint firstItem="XPi-C7-aSd" firstAttribute="baseline" secondItem="DhR-S1-M0I" secondAttribute="baseline" id="nAe-98-ckq"/>
+                            <constraint firstItem="gXc-Eu-bkk" firstAttribute="top" secondItem="2gK-A1-3vu" secondAttribute="bottom" constant="435" id="ncP-uv-oOs"/>
+                            <constraint firstItem="XPi-C7-aSd" firstAttribute="baseline" secondItem="2gK-A1-3vu" secondAttribute="firstBaseline" id="yVt-Ho-To7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TUK-tp-xqS">

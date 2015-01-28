@@ -7,9 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
-class PopViewController: UIViewController {
+class PopViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
+
+    var tableView: UITableView?
     
-    // how to add a table view and table view controller setup to a popover like this...
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return 25
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
+        var cell:UITableViewCell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "mycell")
+        cell.textLabel?.text = "row#\(indexPath.row)"
+        cell.detailTextLabel?.text = "subtitle#\(indexPath.row)"
+        return cell
+    }
     
 }
