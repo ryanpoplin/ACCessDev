@@ -12,8 +12,37 @@ import CoreData
 // figure it out with coredata for shortcuts...
 
 class PopViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
+    
+    override func viewDidAppear(animated:Bool) {
+        
+        super.viewDidAppear(animated)
+        
+    }
+    
+    var tableView: UITableView?
 
-    let tableView: UITableView?
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        tableView?.dataSource = self
+        tableView?.delegate = self
+        
+        tableView = UITableView(frame: view.bounds, style: .Plain)
+        
+        if let theTableView = tableView {
+            theTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier:"identifier")
+            
+            theTableView.dataSource = self
+            theTableView.delegate = self
+            
+            theTableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+            
+            view.addSubview(theTableView)
+            
+        }
+        
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return 25
