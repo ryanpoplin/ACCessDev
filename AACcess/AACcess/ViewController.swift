@@ -28,9 +28,9 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     @IBOutlet weak var textArea: UITextView!
     @IBOutlet weak var dataButton: UIBarButtonItem!
     @IBOutlet weak var shortcutButton: UIBarButtonItem!
-    @IBOutlet weak var saveShortcutButton: UIButton!
-    @IBOutlet weak var clearTextViewButton: UIButton!
-    @IBOutlet weak var speakOrPauseButton: UIButton!
+//    @IBOutlet weak var saveShortcutButton: UIButton!
+//    @IBOutlet weak var clearTextViewButton: UIButton!
+//    @IBOutlet weak var speakOrPauseButton: UIButton!
     
     // internal class variables...
     internal var textViewness: String = ""
@@ -47,14 +47,17 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
         // ...
         textArea.delegate = self
         
+        // fix the cursor issue...
+        self.automaticallyAdjustsScrollViewInsets = false
+        
         // focus on the textView object...
         textArea?.becomeFirstResponder()
         
         if textArea.text == "" {
             
             // leave the clear button alone...
-            speakOrPauseButton.enabled = false
-            saveShortcutButton.enabled = false
+//            speakOrPauseButton.enabled = false
+//            saveShortcutButton.enabled = false
             
         }
         
@@ -78,13 +81,13 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
         
         if trimmedString.length == 0 {
             
-            speakOrPauseButton.enabled = false
-            saveShortcutButton.enabled = false
+//            speakOrPauseButton.enabled = false
+//            saveShortcutButton.enabled = false
             
         } else {
             
-            speakOrPauseButton.enabled = true
-            saveShortcutButton.enabled = true
+//            speakOrPauseButton.enabled = true
+//            saveShortcutButton.enabled = true
             
         }
         
@@ -109,8 +112,8 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     
         textArea?.text = nil
         
-        speakOrPauseButton.enabled = false
-        saveShortcutButton.enabled = false
+//        speakOrPauseButton.enabled = false
+//        saveShortcutButton.enabled = false
     
     }
     
