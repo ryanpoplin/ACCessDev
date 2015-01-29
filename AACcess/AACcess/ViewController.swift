@@ -26,8 +26,8 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     
     // reference the storyboard UI objects...
     @IBOutlet weak var textArea: UITextView!
-    @IBOutlet weak var dataButton: UIBarButtonItem!
     @IBOutlet weak var shortcutButton: UIBarButtonItem!
+    @IBOutlet weak var cateButton: UIBarButtonItem!
     @IBOutlet weak var clearTextViewButton: UIButton!
     @IBOutlet weak var speakOrPauseButton: UIButton!
     @IBOutlet weak var saveShortcutButton: UIButton!
@@ -107,15 +107,31 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     // assign the PopView.xib file as the interface/view for the PopViewController class...
     internal let popView = PopViewController(nibName: "PopView", bundle: nil)
     
+    internal let cateView = CateViewController(nibName: "CateView", bundle: nil)
+    
     // ...
     @IBAction func showPopView(sender: UIBarButtonItem) {
         
+        cateView.dismissViewControllerAnimated(true, completion: nil)
+        
         let popController = UIPopoverController(contentViewController: popView)
         
-        popController.popoverContentSize = CGSize(width: 450, height: 320)
+        popController.popoverContentSize = CGSize(width: 1000, height: 320)
         
         popController.presentPopoverFromBarButtonItem(shortcutButton, permittedArrowDirections: UIPopoverArrowDirection.Up, animated: true)
         
+    }
+    
+    @IBAction func showCateView(sender: UIBarButtonItem) {
+        
+        popView.dismissViewControllerAnimated(true, completion: nil)
+        
+        let popController = UIPopoverController(contentViewController: cateView)
+        
+        popController.popoverContentSize = CGSize(width: 1000, height: 320)
+        
+        popController.presentPopoverFromBarButtonItem(cateButton, permittedArrowDirections: UIPopoverArrowDirection.Up, animated: true)
+    
     }
     
     // action method for the clear button object...

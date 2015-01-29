@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="width" constant="736" id="uqI-6o-7tX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31a-Up-Ps8">
                                 <rect key="frame" x="334" y="323" width="100" height="50"/>
@@ -87,16 +87,15 @@
                                 <action selector="showPopView:" destination="BYZ-38-t0r" id="H8s-Up-NBf"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Data" id="SvT-UI-I05">
+                        <barButtonItem key="rightBarButtonItem" title="Categories" id="NAb-G6-a6X">
                             <connections>
-                                <action selector="dataAction:" destination="BYZ-38-t0r" id="eWY-Mh-uU8"/>
-                                <segue destination="jpK-7t-Uhv" kind="push" id="8ev-yp-mhO"/>
+                                <action selector="showCateView:" destination="BYZ-38-t0r" id="fyv-cX-FEJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cateButton" destination="NAb-G6-a6X" id="LlE-Kg-CfF"/>
                         <outlet property="clearTextViewButton" destination="31a-Up-Ps8" id="c6X-F7-psO"/>
-                        <outlet property="dataButton" destination="SvT-UI-I05" id="d1O-Vu-R64"/>
                         <outlet property="saveShortcutButton" destination="Jn9-V5-uw7" id="tmd-vk-wPV"/>
                         <outlet property="shortcutButton" destination="loQ-XX-sF3" id="Rgz-7b-4RL"/>
                         <outlet property="speakOrPauseButton" destination="6d0-w9-jQS" id="fvf-se-bqi"/>
@@ -106,25 +105,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-482" y="774"/>
-        </scene>
-        <!--Data View Controller-->
-        <scene sceneID="jPI-S6-d6j">
-            <objects>
-                <viewController id="jpK-7t-Uhv" customClass="DataViewController" customModule="AACcess" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gOs-Xb-OxO"/>
-                        <viewControllerLayoutGuide type="bottom" id="fws-1s-6HY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OQR-HJ-QYD">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ILp-cW-kk4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cyB-2l-s62" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="439" y="624"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mvy-up-uYL">
