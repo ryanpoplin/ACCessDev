@@ -11,7 +11,7 @@ import CoreData
 
 // figure it out with coredata for shortcuts...
 
-class PopViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
+class PopViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UIPopoverControllerDelegate {
     
     override func viewDidAppear(animated:Bool) {
         

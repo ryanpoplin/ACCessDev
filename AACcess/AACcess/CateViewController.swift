@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CateViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
+class CateViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UIPopoverControllerDelegate {
     
     override func viewDidAppear(animated:Bool) {
         

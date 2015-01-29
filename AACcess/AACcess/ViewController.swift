@@ -12,6 +12,9 @@ import QuartzCore
 import JavaScriptCore
 
 // 1.) A RED CLOSE LABELS OBJECTS, CLOSE POPOVERVIEWS WHEN TEXTVIEW IS ALTERED, REVIEW CODE, MAKE USEFUL COMMENTS, AND DO SOME FINAL FUNCTIONALITY AND UI TESTING FOR CURRENT CODE...MAKE SURE CURSOR GOES UP TOP WHEN CLEAR IS HIT, THAT THE SPEECH BUTTON DOESN'T MESS UP AND THAT THE KEYBOARD DOESN'T NOT POP UP UNDER CERTAIN CIRCUMSTANCES...
+
+// ACTION SHEET, ETC...
+
 // 2.) ADD THE COREDATA STANDARD SHORTCUT FUNCTIONALITY WITH AN ACTION SHEET TO DETERMINE IT'S GOING TO BE ASSCIATED WITH THE SHORTCUTS TABLEVIEW DATASOURCE...
 // 3.) JUST FIGURE THE CATEGORY SHORTCUTS SETUP WITH TABLE VIEW NAVIGATION AND COREDATA...MOST CHALLENGING FEATURE...
 // 4.) TEST THE FUCK OUT OF EVERYTHING AND MAKE SURE ADAM IS HAPPY WITH IT...
@@ -26,7 +29,7 @@ import JavaScriptCore
 // *.) WISH LIST ITEMS: USEFUL USER SETTINGS VIEW, CUSTOM KEYBOARD OBJECT, etc...
 
 // ...
-class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerDelegate {
+class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerDelegate, UIPopoverControllerDelegate {
     
     // hide the status bar...
     override func prefersStatusBarHidden() -> Bool {
@@ -50,6 +53,12 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     internal var textViewness: String = ""
     internal var speechPaused: Bool = false
     internal var synthesizer: AVSpeechSynthesizer!
+    
+    // assign the PopView.xib file as the interface/view for the PopViewController class...
+    
+    internal let popView = PopViewController(nibName: "PopView", bundle: nil)
+    
+    internal let cateView = CateViewController(nibName: "CateView", bundle: nil)
     
     // ...
     override func viewDidLoad() {
@@ -97,6 +106,9 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     
     func textViewDidChange(textView: UITextView) {
         
+        popView.dismissViewControllerAnimated(true, completion: nil)
+        cateView.dismissViewControllerAnimated(true, completion: nil)
+        
         // ...
         var textString: NSString = textView.text
         // ...
@@ -117,11 +129,6 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
         }
         
     }
-
-    // assign the PopView.xib file as the interface/view for the PopViewController class...
-    internal let popView = PopViewController(nibName: "PopView", bundle: nil)
-    
-    internal let cateView = CateViewController(nibName: "CateView", bundle: nil)
     
     // ...
     @IBAction func showPopView(sender: UIBarButtonItem) {
@@ -130,7 +137,9 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
         
         let popController = UIPopoverController(contentViewController: popView)
         
-        popController.popoverContentSize = CGSize(width: 900, height: 320)
+        popController.delegate = self
+        
+        popController.popoverContentSize = CGSize(width: 1000, height: 231)
         
         popController.presentPopoverFromBarButtonItem(shortcutButton, permittedArrowDirections: UIPopoverArrowDirection.Up, animated: true)
         
@@ -142,7 +151,9 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
         
         let popController = UIPopoverController(contentViewController: cateView)
         
-        popController.popoverContentSize = CGSize(width: 900, height: 320)
+        popController.delegate = self
+        
+        popController.popoverContentSize = CGSize(width: 1000, height: 231)
         
         popController.presentPopoverFromBarButtonItem(cateButton, permittedArrowDirections: UIPopoverArrowDirection.Up, animated: true)
     
