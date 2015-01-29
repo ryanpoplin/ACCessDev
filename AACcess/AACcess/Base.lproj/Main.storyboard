@@ -67,6 +67,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afo-1w-r4G"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -82,22 +85,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TUK-tp-xqS">
-                        <barButtonItem key="leftBarButtonItem" title="Shortcuts" id="loQ-XX-sF3">
+                        <barButtonItem key="leftBarButtonItem" title="Quick Phrases" id="5a8-0r-ta2">
                             <connections>
-                                <action selector="showPopView:" destination="BYZ-38-t0r" id="H8s-Up-NBf"/>
+                                <action selector="showPopView:" destination="BYZ-38-t0r" id="SCN-LS-Ieb"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Categories" id="NAb-G6-a6X">
+                        <barButtonItem key="rightBarButtonItem" title="Categories" id="Pcy-ZB-Amz">
                             <connections>
-                                <action selector="showCateView:" destination="BYZ-38-t0r" id="fyv-cX-FEJ"/>
+                                <action selector="showCateView:" destination="BYZ-38-t0r" id="hbz-dD-awf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cateButton" destination="NAb-G6-a6X" id="LlE-Kg-CfF"/>
+                        <outlet property="cateButton" destination="Pcy-ZB-Amz" id="46a-dc-mJN"/>
                         <outlet property="clearTextViewButton" destination="31a-Up-Ps8" id="c6X-F7-psO"/>
                         <outlet property="saveShortcutButton" destination="Jn9-V5-uw7" id="tmd-vk-wPV"/>
-                        <outlet property="shortcutButton" destination="loQ-XX-sF3" id="Rgz-7b-4RL"/>
+                        <outlet property="shortcutButton" destination="5a8-0r-ta2" id="I7U-Cn-jAg"/>
                         <outlet property="speakOrPauseButton" destination="6d0-w9-jQS" id="fvf-se-bqi"/>
                         <outlet property="textArea" destination="g63-zi-98R" id="oBn-Mi-UhZ"/>
                     </connections>

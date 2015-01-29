@@ -11,8 +11,6 @@ import AVFoundation
 import QuartzCore
 import JavaScriptCore
 
-// 1.) A RED CLOSE LABELS OBJECTS, CLOSE POPOVERVIEWS WHEN TEXTVIEW IS ALTERED, REVIEW CODE, MAKE USEFUL COMMENTS, AND DO SOME FINAL FUNCTIONALITY AND UI TESTING FOR CURRENT CODE...MAKE SURE CURSOR GOES UP TOP WHEN CLEAR IS HIT, THAT THE SPEECH BUTTON DOESN'T MESS UP AND THAT THE KEYBOARD DOESN'T NOT POP UP UNDER CERTAIN CIRCUMSTANCES...
-
 // ACTION SHEET, ETC...
 
 // 2.) ADD THE COREDATA STANDARD SHORTCUT FUNCTIONALITY WITH AN ACTION SHEET TO DETERMINE IT'S GOING TO BE ASSCIATED WITH THE SHORTCUTS TABLEVIEW DATASOURCE...
@@ -60,6 +58,12 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     
     internal let cateView = CateViewController(nibName: "CateView", bundle: nil)
     
+    override func viewWillAppear(animated: Bool) {
+
+        super.viewDidAppear(animated)
+        
+    }
+    
     // ...
     override func viewDidLoad() {
         
@@ -81,6 +85,10 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
         
         // focus on the textView object...
         textArea?.becomeFirstResponder()
+        
+        clearTextViewButton.exclusiveTouch = true
+        speakOrPauseButton.exclusiveTouch = true
+        saveShortcutButton.exclusiveTouch = true
         
         // make those buttons look good...
         clearTextViewButton.layer.cornerRadius = 5
@@ -133,7 +141,7 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     // ...
     @IBAction func showPopView(sender: UIBarButtonItem) {
         
-        cateView.dismissViewControllerAnimated(true, completion: nil)
+        // cateView.dismissViewControllerAnimated(true, completion: nil)
         
         let popController = UIPopoverController(contentViewController: popView)
         
@@ -147,7 +155,7 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     
     @IBAction func showCateView(sender: UIBarButtonItem) {
         
-        popView.dismissViewControllerAnimated(true, completion: nil)
+        // popView.dismissViewControllerAnimated(true, completion: nil)
         
         let popController = UIPopoverController(contentViewController: cateView)
         
@@ -156,6 +164,20 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
         popController.popoverContentSize = CGSize(width: 1000, height: 231)
         
         popController.presentPopoverFromBarButtonItem(cateButton, permittedArrowDirections: UIPopoverArrowDirection.Up, animated: true)
+    
+    }
+    
+    @IBAction func saveButtonPressed(sender: UIButton) {
+        
+        var controller: UIAlertController?
+        
+        controller = UIAlertController(title: "Title", message: "Message", preferredStyle: .Alert)
+            
+        let action = UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler: {(paramAction:UIAlertAction!) in println("The done button was pressed...")})
+            
+        controller!.addAction(action)
+        
+        self.presentViewController(controller!, animated: true, completion: nil)
     
     }
     
@@ -171,7 +193,7 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     
     }
     
-    @IBAction func speakOrPausePressed(sender: AnyObject) {
+    @IBAction func speakOrPausePressed(sender: UIButton) {
     
         var textString:NSString = textArea.text
         var charSet:NSCharacterSet = NSCharacterSet.whitespaceAndNewlineCharacterSet()
