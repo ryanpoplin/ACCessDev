@@ -116,7 +116,7 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
         
         let popController = UIPopoverController(contentViewController: popView)
         
-        popController.popoverContentSize = CGSize(width: 1000, height: 320)
+        popController.popoverContentSize = CGSize(width: 900, height: 320)
         
         popController.presentPopoverFromBarButtonItem(shortcutButton, permittedArrowDirections: UIPopoverArrowDirection.Up, animated: true)
         
@@ -128,7 +128,7 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
         
         let popController = UIPopoverController(contentViewController: cateView)
         
-        popController.popoverContentSize = CGSize(width: 1000, height: 320)
+        popController.popoverContentSize = CGSize(width: 900, height: 320)
         
         popController.presentPopoverFromBarButtonItem(cateButton, permittedArrowDirections: UIPopoverArrowDirection.Up, animated: true)
     
