@@ -14,6 +14,8 @@
 		5A0FC9081A7712EC009AC750 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0FC9071A7712EC009AC750 /* Images.xcassets */; };
 		5A0FC90B1A7712EC009AC750 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A0FC9091A7712EC009AC750 /* LaunchScreen.xib */; };
 		5A0FC9171A7712EC009AC750 /* AACcessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0FC9161A7712EC009AC750 /* AACcessTests.swift */; };
+		5A23435E1A7B713C0023E043 /* libKeenClient-Aggregate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A23435D1A7B713C0023E043 /* libKeenClient-Aggregate.a */; };
+		5A2343601A7B718E0023E043 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A23435F1A7B718E0023E043 /* CoreLocation.framework */; };
 		5A45D9701A79B916007B69AA /* CateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A45D96F1A79B916007B69AA /* CateView.xib */; };
 		5A45D9741A79C016007B69AA /* CateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45D9731A79C016007B69AA /* CateViewController.swift */; };
 		5A96CE6A1A775136008188A8 /* PopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A96CE691A775136008188A8 /* PopView.xib */; };
@@ -43,6 +45,11 @@
 		5A0FC9101A7712EC009AC750 /* AACcessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AACcessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0FC9151A7712EC009AC750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A0FC9161A7712EC009AC750 /* AACcessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AACcessTests.swift; sourceTree = "<group>"; };
+		5A23435A1A7B713C0023E043 /* KeenClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeenClient.h; sourceTree = "<group>"; };
+		5A23435B1A7B713C0023E043 /* KeenProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeenProperties.h; sourceTree = "<group>"; };
+		5A23435C1A7B713C0023E043 /* KIOEventStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIOEventStore.h; sourceTree = "<group>"; };
+		5A23435D1A7B713C0023E043 /* libKeenClient-Aggregate.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libKeenClient-Aggregate.a"; sourceTree = "<group>"; };
+		5A23435F1A7B718E0023E043 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5A45D96F1A79B916007B69AA /* CateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CateView.xib; sourceTree = "<group>"; };
 		5A45D9731A79C016007B69AA /* CateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CateViewController.swift; sourceTree = "<group>"; };
 		5A45D9751A7AB6D0007B69AA /* AACcess-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AACcess-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -57,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A2343601A7B718E0023E043 /* CoreLocation.framework in Frameworks */,
+				5A23435E1A7B713C0023E043 /* libKeenClient-Aggregate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +82,7 @@
 		5A0FC8EF1A7712EC009AC750 = {
 			isa = PBXGroup;
 			children = (
+				5A23435F1A7B718E0023E043 /* CoreLocation.framework */,
 				5A0FC8FA1A7712EC009AC750 /* AACcess */,
 				5A0FC9131A7712EC009AC750 /* AACcessTests */,
 				5A0FC8F91A7712EC009AC750 /* Products */,
@@ -91,6 +101,7 @@
 		5A0FC8FA1A7712EC009AC750 /* AACcess */ = {
 			isa = PBXGroup;
 			children = (
+				5A2343591A7B713C0023E043 /* KeenClient-2 */,
 				5A0FC8FD1A7712EC009AC750 /* AppDelegate.swift */,
 				5A45D9751A7AB6D0007B69AA /* AACcess-Bridging-Header.h */,
 				5A0FC9021A7712EC009AC750 /* ViewController.swift */,
@@ -132,6 +143,18 @@
 				5A0FC9151A7712EC009AC750 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A2343591A7B713C0023E043 /* KeenClient-2 */ = {
+			isa = PBXGroup;
+			children = (
+				5A23435A1A7B713C0023E043 /* KeenClient.h */,
+				5A23435B1A7B713C0023E043 /* KeenProperties.h */,
+				5A23435C1A7B713C0023E043 /* KIOEventStore.h */,
+				5A23435D1A7B713C0023E043 /* libKeenClient-Aggregate.a */,
+			);
+			name = "KeenClient-2";
+			path = "../../../Downloads/KeenClient-2";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +392,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AACcess/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/byrdannfox/Downloads/KeenClient-2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AACcess/AACcess-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -382,6 +409,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AACcess/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/byrdannfox/Downloads/KeenClient-2",
+				);
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AACcess/AACcess-Bridging-Header.h";
 			};

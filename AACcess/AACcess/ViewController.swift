@@ -237,21 +237,65 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     func speechSynthesizer(synthesizer: AVSpeechSynthesizer!, didFinishSpeechUtterance utterance: AVSpeechUtterance!) {
         
         speakOrPauseButton.setTitle("Speak", forState: .Normal)
+        
         speechPaused = false
+        
         var sentenceText: String = textArea.text
         
-        // analyzeText(sentenceText)
+        analyzeText(sentenceText)
         
     }
     
     // prepare for a segue...
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        popView.dismissViewControllerAnimated(true, completion: nil)
+        // popView.dismissViewControllerAnimated(true, completion: nil)
         
     }
     
-    // ...
-    @IBAction func dataAction(sender: UIBarButtonItem) {}
+    func analyzeText(text: String) {
+        
+        let context = JSContext(virtualMachine: JSVirtualMachine())
+        
+        let path = NSBundle.mainBundle().pathForResource("text-analyzer", ofType: "js")
+        
+        let content = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)
+        
+        context.evaluateScript(content)
+        
+        let analyzeText = context.objectForKeyedSubscript("analyzeText")
+        
+        analyzeText.callWithArguments([text])
+        
+        let getSentences = context.objectForKeyedSubscript("getSentences")
+        
+        let getWordsCount = context.objectForKeyedSubscript("getWordsCount")
+        
+        let getWordsPerSentence = context.objectForKeyedSubscript("getWordsPerSentence")
+        
+        let getAverageWordLength = context.objectForKeyedSubscript("getAverageWordLength")
+        
+        var sentences = getSentences.callWithArguments([]).toNumber()
+        var wordsCount = getWordsCount.callWithArguments([]).toNumber()
+        var wordsPerSentence = getWordsPerSentence.callWithArguments([]).toNumber()
+        var averageWordLength = getAverageWordLength.callWithArguments([]).toNumber()
+        
+        var dataDic:NSDictionary = [
+            "text": text,
+            "sentences": sentences,
+            "wordsCount": wordsCount,
+            "wordsPerSentence": wordsPerSentence,
+            "averageWordLength": averageWordLength
+        ]
+        
+        println(dataDic)
+        
+        let sentenceSpoken:NSString = "sentence_spoken"
+        
+        KeenClient.sharedClient().addEvent(dataDic, toEventCollection: sentenceSpoken, error: nil)
+        
+        KeenClient.sharedClient().uploadWithFinishedBlock({ (Void) -> Void in })
+        
+    }
     
 }
