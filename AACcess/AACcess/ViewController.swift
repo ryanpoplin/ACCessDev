@@ -11,8 +11,7 @@ import AVFoundation
 import QuartzCore
 import JavaScriptCore
 
-// ACTION SHEET, ETC...
-
+// 1.)
 // 2.) ADD THE COREDATA STANDARD SHORTCUT FUNCTIONALITY WITH AN ACTION SHEET TO DETERMINE IT'S GOING TO BE ASSCIATED WITH THE SHORTCUTS TABLEVIEW DATASOURCE...
 // 3.) JUST FIGURE THE CATEGORY SHORTCUTS SETUP WITH TABLE VIEW NAVIGATION AND COREDATA...MOST CHALLENGING FEATURE...
 // 4.) TEST THE FUCK OUT OF EVERYTHING AND MAKE SURE ADAM IS HAPPY WITH IT...
@@ -41,11 +40,11 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     
     // reference the storyboard UI objects...
     @IBOutlet weak var textArea: UITextView!
-    @IBOutlet weak var shortcutButton: UIBarButtonItem!
-    @IBOutlet weak var cateButton: UIBarButtonItem!
     @IBOutlet weak var clearTextViewButton: UIButton!
     @IBOutlet weak var speakOrPauseButton: UIButton!
     @IBOutlet weak var saveShortcutButton: UIButton!
+    @IBOutlet weak var shortcutsButton: UIButton!
+    @IBOutlet weak var catesButton: UIButton!
     
     // internal class variables...
     internal var textViewness: String = ""
@@ -61,10 +60,14 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
     override func viewWillAppear(animated: Bool) {
 
         super.viewDidAppear(animated)
+
+        catesButton.exclusiveTouch = true
+        catesButton.setTitle("Categories", forState: .Normal)
+        shortcutsButton.exclusiveTouch = true
+        shortcutsButton.setTitle("Shortcuts", forState: .Normal)
         
     }
     
-    // ...
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -138,10 +141,9 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
         
     }
     
-    // ...
-    @IBAction func showPopView(sender: UIBarButtonItem) {
+    @IBAction func shortcutsButton(sender: UIButton) {
         
-        // cateView.dismissViewControllerAnimated(true, completion: nil)
+        cateView.dismissViewControllerAnimated(true, completion: nil)
         
         let popController = UIPopoverController(contentViewController: popView)
         
@@ -149,27 +151,15 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
         
         popController.popoverContentSize = CGSize(width: 1000, height: 231)
         
-        popController.presentPopoverFromBarButtonItem(shortcutButton, permittedArrowDirections: UIPopoverArrowDirection.Up, animated: true)
+        popController.presentPopoverFromRect(sender.frame, inView: self.view, permittedArrowDirections: .Up, animated: true)
         
     }
     
-    @IBAction func showCateView(sender: UIBarButtonItem) {
+    @IBAction func saveButtonPressed(sender: UIButton!) {
         
-        // popView.dismissViewControllerAnimated(true, completion: nil)
+        println("...")
         
-        let popController = UIPopoverController(contentViewController: cateView)
-        
-        popController.delegate = self
-        
-        popController.popoverContentSize = CGSize(width: 1000, height: 231)
-        
-        popController.presentPopoverFromBarButtonItem(cateButton, permittedArrowDirections: UIPopoverArrowDirection.Up, animated: true)
-    
-    }
-    
-    @IBAction func saveButtonPressed(sender: UIButton) {
-        
-        var controller: UIAlertController?
+        /*var controller: UIAlertController?
         
         controller = UIAlertController(title: "Title", message: "Message", preferredStyle: .Alert)
             
@@ -177,7 +167,7 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
             
         controller!.addAction(action)
         
-        self.presentViewController(controller!, animated: true, completion: nil)
+        self.presentViewController(controller!, animated: true, completion: nil)*/
     
     }
     
@@ -190,6 +180,20 @@ class ViewController: UIViewController, UITextViewDelegate, AVSpeechSynthesizerD
         
         speakOrPauseButton.enabled = false
         saveShortcutButton.enabled = false
+    
+    }
+    
+    @IBAction func catesAction(sender: UIButton) {
+    
+        popView.dismissViewControllerAnimated(true, completion: nil)
+        
+        let popController = UIPopoverController(contentViewController: cateView)
+        
+        popController.delegate = self
+        
+        popController.popoverContentSize = CGSize(width: 1000, height: 231)
+        
+        popController.presentPopoverFromRect(sender.frame, inView: self.view, permittedArrowDirections: .Up, animated: true)
     
     }
     

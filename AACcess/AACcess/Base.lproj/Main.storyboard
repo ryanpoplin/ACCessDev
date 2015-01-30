@@ -85,22 +85,36 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TUK-tp-xqS">
-                        <barButtonItem key="leftBarButtonItem" title="Quick Phrases" id="5a8-0r-ta2">
-                            <connections>
-                                <action selector="showPopView:" destination="BYZ-38-t0r" id="SCN-LS-Ieb"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" id="uCt-QV-pLf">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sZF-F8-oAV">
+                                <rect key="frame" x="-23" y="-15" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shortcutsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oku-0o-TOb"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Categories" id="Pcy-ZB-Amz">
-                            <connections>
-                                <action selector="showCateView:" destination="BYZ-38-t0r" id="hbz-dD-awf"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" id="VFW-mF-etJ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8EC-1g-jQC">
+                                <rect key="frame" x="-23" y="-15" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="catesAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nDU-iq-rJj"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cateButton" destination="Pcy-ZB-Amz" id="46a-dc-mJN"/>
+                        <outlet property="catesButton" destination="8EC-1g-jQC" id="d9M-uD-3TU"/>
                         <outlet property="clearTextViewButton" destination="31a-Up-Ps8" id="c6X-F7-psO"/>
                         <outlet property="saveShortcutButton" destination="Jn9-V5-uw7" id="tmd-vk-wPV"/>
-                        <outlet property="shortcutButton" destination="5a8-0r-ta2" id="I7U-Cn-jAg"/>
+                        <outlet property="shortcutsButton" destination="sZF-F8-oAV" id="Er2-eW-6Xq"/>
                         <outlet property="speakOrPauseButton" destination="6d0-w9-jQS" id="fvf-se-bqi"/>
                         <outlet property="textArea" destination="g63-zi-98R" id="oBn-Mi-UhZ"/>
                     </connections>

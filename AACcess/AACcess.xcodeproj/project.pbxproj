@@ -46,6 +46,7 @@
 		5A45D96F1A79B916007B69AA /* CateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CateView.xib; sourceTree = "<group>"; };
 		5A45D9731A79C016007B69AA /* CateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CateViewController.swift; sourceTree = "<group>"; };
 		5A45D9751A7AB6D0007B69AA /* AACcess-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AACcess-Bridging-Header.h"; sourceTree = "<group>"; };
+		5A45D97B1A7B43AF007B69AA /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		5A96CE691A775136008188A8 /* PopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopView.xib; sourceTree = "<group>"; };
 		5A96CE6B1A775153008188A8 /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 		5A9DFD901A77AAA700002F5A /* text-analyzer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "text-analyzer.js"; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 				5A0FC9091A7712EC009AC750 /* LaunchScreen.xib */,
 				5A0FC8FF1A7712EC009AC750 /* AACcess.xcdatamodeld */,
 				5A0FC8FB1A7712EC009AC750 /* Supporting Files */,
+				5A45D97B1A7B43AF007B69AA /* MyPlayground.playground */,
 			);
 			path = AACcess;
 			sourceTree = "<group>";
